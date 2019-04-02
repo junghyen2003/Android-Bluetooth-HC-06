@@ -2,6 +2,7 @@
     <string name="app_name">Android-Bluetooth-HC-06</string>
 
     <string name="bluetooth_search_menu_title">bluetooth_search</string>
-
     <string name="bluetooth_search_menu_icon">bluetooth_search_icon</string>
+    <string name="bluetooth_dialog_main_title">연결되어있는 기기 목록</string>
+    <string name="bluetooth_dialog_sub_title">사용 가능한 기기 목록</string>
 </resources>

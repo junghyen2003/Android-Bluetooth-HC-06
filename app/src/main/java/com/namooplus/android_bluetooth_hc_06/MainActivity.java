@@ -2,7 +2,6 @@ package com.namooplus.android_bluetooth_hc_06;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -33,6 +32,13 @@ public class MainActivity extends AppCompatActivity {
         itemMap.put("test1","test1");
         itemMap.put("test2","test2");
         dialogItemList.add(itemMap);
+        dialogItemList.add(itemMap);
+        dialogItemList.add(itemMap);
+        dialogItemList.add(itemMap);
+        dialogItemList.add(itemMap);
+        dialogItemList.add(itemMap);
+        dialogItemList.add(itemMap);
+
     }
 
     // 메뉴 추가
@@ -63,13 +69,13 @@ public class MainActivity extends AppCompatActivity {
         final View view = inflater.inflate(R.layout.bluetooth_list_dialog,null);
         builder.setView(view);
 
-        final ListView bluetooth_search_ListView = (ListView)view.findViewById(R.id.bluetooth_search_ListView);
+        final ListView bluetooth_search_connected_ListView = (ListView)view.findViewById(R.id.bluetooth_search_connected_ListView);
         final AlertDialog dialog = builder.create();
 
         SimpleAdapter simpleAdapter = new SimpleAdapter(this,dialogItemList, R.layout.bluetooth_list_item, new String[]{"test1","test2"},new int[]{R.id.textView, R.id.textView2});
 
-        bluetooth_search_ListView.setAdapter(simpleAdapter);
-        bluetooth_search_ListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        bluetooth_search_connected_ListView.setAdapter(simpleAdapter);
+        bluetooth_search_connected_ListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(view.getContext(), "아이템 클릭", Toast.LENGTH_SHORT).show();
@@ -77,16 +83,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final SwipeRefreshLayout swipeRefreshLayout = view.findViewById(R.id.bluetooth_search_SwipeRefreshLayout);
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                Toast.makeText(view.getContext(), "리스트 리프레시", Toast.LENGTH_SHORT).show();
-                swipeRefreshLayout.setRefreshing(false);
-            }
-        });
-
-        dialog.setCancelable(false);
+        dialog.setCancelable(true);
         dialog.show();
     }
 }

@@ -1,18 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/bluetooth_search_SwipeRefreshLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ListView
-            android:id="@+id/bluetooth_search_ListView"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-        </ListView>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bluetooth_dialog_main_title" />
+
+            <ListView
+                android:id="@+id/bluetooth_search_connected_ListView"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bluetooth_dialog_sub_title" />
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"></ListView>
+
+        </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:srcCompat="@android:drawable/ic_search_category_default" />
 
 </androidx.cardview.widget.CardView>
