@@ -69,7 +69,7 @@ public class IntroActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        }, 1500);
+        }, 1000);
     }
 
     @Override
