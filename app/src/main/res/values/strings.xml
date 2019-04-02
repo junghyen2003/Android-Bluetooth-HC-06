@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Android-Bluetooth-HC-06</string>
+
+    <string name="bluetooth_search_menu_title">bluetooth_search</string>
 </resources>
